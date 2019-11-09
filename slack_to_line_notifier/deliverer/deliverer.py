@@ -14,7 +14,8 @@ class Deliverer:
     def _send(self, request, method, params={}, headers=None):
         if not self.is_available_method(request):
             return JsonResponse({'status' : HttpResponses.METHOD_NOT_ALLOWED.value})
-        url = 'https' if self.is_secure else 'http' + '://' + self.to
+        protocol = 'https' if self.is_secure else 'http'
+        url = protocol + '://' + self.to
         try:
             res = req(method.value, url, params=params, headers=headers).json()
         except Exception as e:
