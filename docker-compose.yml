@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  gate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name:
+      notifier
+    command:  bash -c "
+        python ./slack_to_line_notifier/manage.py runserver 0.0.0.0:8000
+      "
+    volumes:
+      - .:/slack_to_line_notifier
+    environment:
+      - PLAY_FLG=1
+    ports:
+      - "8000:8000"
