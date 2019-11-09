@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    env_file:
+      - env_val.env
     container_name:
       notifier
     command:  bash -c "

@@ -1,4 +1,5 @@
 local_settings.py
+env_val.env
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

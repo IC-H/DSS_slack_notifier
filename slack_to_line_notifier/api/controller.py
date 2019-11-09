@@ -18,7 +18,7 @@ class Notifier(Deliverer):
         }
         headers = {
             'Authorization' : {
-                'Bearer' : environ('LINE_TOKEN')
+                'Bearer' : environ.get('LINE_TOKEN')
             },
             'Content-Type' : 'application/x-www-form-urlencoded',
         }
