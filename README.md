@@ -47,3 +47,8 @@ Run command for docker-compose.<br />
 ```
 docker-compose up
 ```
+
+Adding Slack's outcoming-hook URL to URL bellow.
+```
+http://${your_site_domain_or_ip_address}:8000/api/slack_to_line/
+```
